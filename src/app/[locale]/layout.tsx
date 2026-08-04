@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
-import { Cormorant_Garamond, Inter, Frank_Ruhl_Libre, Cinzel } from 'next/font/google';
+import { Cormorant_Garamond, Frank_Ruhl_Libre, Cinzel, Assistant } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -22,9 +22,9 @@ const serif = Cormorant_Garamond({
   display: 'swap',
 });
 
-const sans = Inter({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+const sans = Assistant({
+  subsets: ['hebrew', 'latin'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
 });

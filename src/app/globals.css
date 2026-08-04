@@ -4,7 +4,9 @@
 
 @layer base {
   :root {
-    --font-sans: 'Inter', system-ui, sans-serif;
+    /* Assistant supports both Latin and Hebrew — one consistent voice
+       everywhere, and Hebrew never falls through to Arial. */
+    --font-sans: 'Assistant', system-ui, -apple-system, sans-serif;
     --font-display: 'Cinzel', 'Trajan Pro', Georgia, serif;
     --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
     --font-hebrew: 'Frank Ruhl Libre', 'Assistant', 'David', serif;

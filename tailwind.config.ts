@@ -27,7 +27,7 @@ const config: Config = {
       fontFamily: {
         display: ['var(--font-display)', 'Cinzel', 'Trajan Pro', 'Georgia', 'serif'],
         serif: ['var(--font-serif)', 'Cormorant Garamond', 'Georgia', 'serif'],
-        sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Assistant', 'system-ui', 'sans-serif'],
         hebrew: ['var(--font-hebrew)', 'Frank Ruhl Libre', 'serif'],
       },
       letterSpacing: {
