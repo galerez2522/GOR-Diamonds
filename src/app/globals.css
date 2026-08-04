@@ -35,6 +35,13 @@
     font-family: var(--font-hebrew);
   }
 
+  /* In RTL, Latin-only display/serif classes should render in a proper
+     Hebrew face — never fall through to Arial Hebrew. */
+  [dir="rtl"] .font-display,
+  [dir="rtl"] .font-serif {
+    font-family: var(--font-hebrew);
+  }
+
   ::selection {
     @apply bg-champagne/30 text-charcoal;
   }
