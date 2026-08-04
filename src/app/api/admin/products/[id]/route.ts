@@ -1,15 +1,8 @@
 import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
 import { z } from 'zod';
 import { del } from '@vercel/blob';
-import { authOptions } from '@/lib/auth';
+import { requireAdmin } from '@/lib/require-admin';
 import { prisma } from '@/lib/prisma';
-
-async function requireAdmin() {
-  const session = await getServerSession(authOptions);
-  const role = (session?.user as { role?: string } | undefined)?.role;
-  return role === 'ADMIN' ? session : null;
-}
 
 const patchSchema = z.object({
   sku: z.string().optional(),

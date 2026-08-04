@@ -2,29 +2,32 @@ import { redirect } from 'next/navigation';
 import { getServerSession } from 'next-auth';
 import Link from 'next/link';
 import { authOptions } from '@/lib/auth';
+import { requireAdmin } from '@/lib/require-admin';
 
 export const dynamic = 'force-dynamic';
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  const session = await getServerSession(authOptions);
-  const role = (session?.user as { role?: string } | undefined)?.role;
-
-  if (!session?.user) {
+  const rawSession = await getServerSession(authOptions);
+  if (!rawSession?.user?.email) {
     redirect('/en/auth/signin?next=/admin/products');
   }
-  if (role !== 'ADMIN') {
+
+  const adminSession = await requireAdmin();
+  if (!adminSession) {
     return (
       <div className="min-h-screen bg-ivory flex items-center justify-center px-6">
         <div className="max-w-md text-center">
           <h1 className="font-display text-3xl mb-4">Access denied</h1>
           <p className="text-charcoal-500 mb-8">
-            You are signed in as <b>{session.user.email}</b>, but this account is not an administrator.
+            You are signed in as <b>{rawSession.user.email}</b>, but this account is not an administrator.
           </p>
           <Link href="/" className="btn-outline">Back to site</Link>
         </div>
       </div>
     );
   }
+
+  const session = adminSession;
 
   return (
     <div className="min-h-screen flex bg-ivory">

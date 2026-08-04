@@ -1,15 +1,7 @@
 import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
 import { z } from 'zod';
-import { authOptions } from '@/lib/auth';
+import { requireAdmin } from '@/lib/require-admin';
 import { prisma } from '@/lib/prisma';
-
-async function requireAdmin() {
-  const session = await getServerSession(authOptions);
-  const role = (session?.user as { role?: string } | undefined)?.role;
-  if (role !== 'ADMIN') return null;
-  return session;
-}
 
 const productSchema = z.object({
   sku: z.string().min(1),

@@ -1,14 +1,6 @@
 import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
 import { put } from '@vercel/blob';
-import { authOptions } from '@/lib/auth';
-
-async function requireAdmin() {
-  const session = await getServerSession(authOptions);
-  const role = (session?.user as { role?: string } | undefined)?.role;
-  if (role !== 'ADMIN') return null;
-  return session;
-}
+import { requireAdmin } from '@/lib/require-admin';
 
 export async function POST(req: Request) {
   const session = await requireAdmin();
