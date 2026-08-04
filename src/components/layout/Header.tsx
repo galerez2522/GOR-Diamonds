@@ -25,9 +25,11 @@ export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const count = useCartStore((s) => s.count());
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener('scroll', onScroll);
@@ -102,7 +104,7 @@ export function Header() {
           </Link>
           <Link href="/cart" aria-label={t('cart')} className={cn('relative transition-colors', fg, fgHover)}>
             <ShoppingBag size={18} />
-            {count > 0 && (
+            {mounted && count > 0 && (
               <span className="absolute -top-2 -right-2 min-w-[16px] h-4 px-1 rounded-full bg-champagne text-ivory text-[10px] flex items-center justify-center">
                 {count}
               </span>
