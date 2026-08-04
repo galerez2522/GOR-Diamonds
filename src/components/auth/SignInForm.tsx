@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
 export function SignInForm() {
   const t = useTranslations('auth');
+  const params = useSearchParams();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -21,8 +23,12 @@ export function SignInForm() {
       redirect: false,
     });
     setLoading(false);
-    if (res?.error) setError('Invalid credentials');
-    else window.location.href = '/account';
+    if (res?.error) {
+      setError('Invalid credentials');
+      return;
+    }
+    const next = params?.get('next');
+    window.location.href = next && next.startsWith('/') ? next : '/account';
   }
 
   const field = 'w-full bg-transparent border-b border-charcoal/30 focus:border-champagne-dark py-3 text-sm outline-none transition-colors';
