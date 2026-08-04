@@ -4,6 +4,15 @@ import { PrismaAdapter } from '@auth/prisma-adapter';
 import bcrypt from 'bcryptjs';
 import { prisma } from './prisma';
 
+function isAdminEmail(email: string | null | undefined): boolean {
+  if (!email) return false;
+  const list = (process.env.ADMIN_EMAILS ?? '')
+    .split(',')
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
+  return list.includes(email.toLowerCase());
+}
+
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   session: { strategy: 'jwt' },
@@ -25,12 +34,23 @@ export const authOptions: NextAuthOptions = {
         if (!user?.passwordHash) return null;
         const ok = await bcrypt.compare(credentials.password, user.passwordHash);
         if (!ok) return null;
+
+        // Auto-promote admin emails on sign-in
+        let role = user.role;
+        if (isAdminEmail(user.email) && role !== 'ADMIN') {
+          await prisma.user.update({
+            where: { id: user.id },
+            data: { role: 'ADMIN' },
+          });
+          role = 'ADMIN';
+        }
+
         return {
           id: user.id,
           email: user.email,
           name: user.name,
           image: user.image,
-          role: user.role as 'CUSTOMER' | 'STAFF' | 'ADMIN',
+          role: role as 'CUSTOMER' | 'STAFF' | 'ADMIN',
         };
       },
     }),

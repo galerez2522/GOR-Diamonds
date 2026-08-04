@@ -9,6 +9,14 @@ const schema = z.object({
   password: z.string().min(8),
 });
 
+function isAdminEmail(email: string): boolean {
+  const list = (process.env.ADMIN_EMAILS ?? '')
+    .split(',')
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
+  return list.includes(email.toLowerCase());
+}
+
 export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
   const parsed = schema.safeParse(body);
@@ -27,8 +35,9 @@ export async function POST(req: Request) {
       name: parsed.data.name,
       email: parsed.data.email,
       passwordHash,
+      role: isAdminEmail(parsed.data.email) ? 'ADMIN' : 'CUSTOMER',
     },
-    select: { id: true, email: true, name: true },
+    select: { id: true, email: true, name: true, role: true },
   });
 
   return NextResponse.json({ user });

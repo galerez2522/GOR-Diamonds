@@ -1,45 +1,42 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { ProductCard } from '@/components/product/ProductCard';
-import { sampleProducts } from '@/lib/sample-data';
+import { listCategory } from '@/lib/catalog';
 import Image from 'next/image';
 
 type Params = { locale: string; category: string };
 
 const CATEGORY_MAP: Record<
   string,
-  { titleKey: string; descKey: string; hero: string; sampleKey: keyof typeof sampleProducts }
+  { titleKey: string; descKey: string; hero: string }
 > = {
   'engagement-rings': {
     titleKey: 'engagementRings.title',
     descKey: 'engagementRings.description',
     hero: 'https://images.unsplash.com/photo-1602752275197-9e4f5efe2b1b?auto=format&fit=crop&w=2400&q=80',
-    sampleKey: 'engagement-rings',
   },
   'wedding-rings': {
     titleKey: 'weddingRings.title',
     descKey: 'weddingRings.description',
     hero: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=80',
-    sampleKey: 'wedding-rings',
   },
   'necklaces': {
     titleKey: 'necklaces.title',
     descKey: 'necklaces.description',
     hero: 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=2400&q=80',
-    sampleKey: 'necklaces',
   },
   'earrings': {
     titleKey: 'earrings.title',
     descKey: 'earrings.description',
     hero: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=2400&q=80',
-    sampleKey: 'earrings',
   },
   'bracelets': {
     titleKey: 'bracelets.title',
     descKey: 'bracelets.description',
     hero: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=2400&q=80',
-    sampleKey: 'bracelets',
   },
 };
+
+export const dynamic = 'force-dynamic';
 
 export function generateStaticParams() {
   return Object.keys(CATEGORY_MAP).map((category) => ({ category }));
@@ -63,7 +60,7 @@ export default async function CollectionPage({
   }
 
   const t = await getTranslations('collections');
-  const products = sampleProducts[cfg.sampleKey] ?? [];
+  const products = await listCategory(category);
 
   return (
     <>
