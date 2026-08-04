@@ -1,0 +1,158 @@
+{
+  "brand": {
+    "name": "GOR Diamonds",
+    "tagline": "Timeless brilliance, crafted with passion"
+  },
+  "nav": {
+    "engagementRings": "Engagement Rings",
+    "weddingRings": "Wedding Rings",
+    "necklaces": "Necklaces",
+    "earrings": "Earrings",
+    "bracelets": "Bracelets",
+    "about": "Our Story",
+    "appointment": "Book Appointment",
+    "account": "Account",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "cart": "Cart",
+    "wishlist": "Wishlist",
+    "search": "Search"
+  },
+  "hero": {
+    "eyebrow": "The GOR Diamonds Collection",
+    "title": "The Language of Brilliance",
+    "subtitle": "Extraordinary diamonds. Uncompromising craftsmanship. Set to celebrate life’s most cherished moments.",
+    "cta": "Explore the Collection",
+    "ctaSecondary": "Book a Private Appointment"
+  },
+  "collections": {
+    "title": "The Signature Collections",
+    "subtitle": "Discover the pieces that define GOR Diamonds",
+    "viewAll": "View Collection",
+    "engagementRings": {
+      "title": "Engagement Rings",
+      "description": "A moment made eternal in solitaires and legendary settings."
+    },
+    "weddingRings": {
+      "title": "Wedding Rings",
+      "description": "Bands that carry a promise — sculpted in gold and platinum."
+    },
+    "necklaces": {
+      "title": "Necklaces & Pendants",
+      "description": "Silhouettes of light, worn close to the heart."
+    },
+    "earrings": {
+      "title": "Earrings",
+      "description": "Illuminating studs, drops and chandeliers."
+    },
+    "bracelets": {
+      "title": "Bracelets",
+      "description": "Sculptural bracelets and tennis lines of extraordinary quality."
+    }
+  },
+  "story": {
+    "eyebrow": "The House of GOR",
+    "title": "A Legacy Written in Light",
+    "body": "Every GOR Diamonds creation begins with the rarest of stones — hand-selected, hand-set, and finished in our atelier. For over a generation, our craftsmen have honored the tradition of the great diamond houses, translating each stone’s natural fire into pieces that will be treasured across generations.",
+    "cta": "Discover Our Story"
+  },
+  "craft": {
+    "eyebrow": "The Atelier",
+    "title": "Master Craftsmanship",
+    "body": "From the first rough diamond to the final polish, each piece is crafted by hand — a slow, exacting art that transforms the extraordinary into the eternal.",
+    "items": {
+      "select": {
+        "title": "The Selection",
+        "body": "Only the top 1% of diamonds meet the GOR Diamonds standard."
+      },
+      "design": {
+        "title": "The Design",
+        "body": "Every setting is drawn by hand before it is ever cast in gold."
+      },
+      "set": {
+        "title": "The Setting",
+        "body": "Our master jewellers hand-set every stone under magnification."
+      }
+    }
+  },
+  "appointment": {
+    "title": "A Private Appointment",
+    "subtitle": "Meet with a GOR Diamonds specialist — in-store, by video, or by phone. We will guide you through the collection and help create something truly personal.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "type": "Appointment Type",
+      "typeInStore": "In-Store",
+      "typeVirtual": "Virtual",
+      "typePhone": "Phone",
+      "date": "Preferred Date & Time",
+      "interest": "I am interested in",
+      "message": "A few words about the occasion",
+      "budget": "Budget (optional)",
+      "submit": "Request Appointment",
+      "success": "Thank you. A specialist will be in touch within 24 hours.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "product": {
+    "from": "From",
+    "addToCart": "Add to Cart",
+    "addedToCart": "Added to Cart",
+    "wishlist": "Add to Wishlist",
+    "details": "The Details",
+    "carat": "Carat",
+    "shape": "Shape",
+    "color": "Color",
+    "clarity": "Clarity",
+    "cut": "Cut",
+    "metal": "Metal",
+    "certificate": "Certificate",
+    "requestInfo": "Request Information",
+    "bookViewing": "Book a Viewing"
+  },
+  "cart": {
+    "title": "Your Selection",
+    "empty": "Your selection is empty.",
+    "continueShopping": "Continue Exploring",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingFree": "Complimentary",
+    "total": "Total",
+    "checkout": "Secure Checkout",
+    "remove": "Remove",
+    "quantity": "Quantity"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "name": "Full Name",
+    "noAccount": "New to GOR Diamonds?",
+    "hasAccount": "Already have an account?",
+    "signInCta": "Sign In",
+    "signUpCta": "Create Your Account",
+    "or": "or"
+  },
+  "footer": {
+    "explore": "Explore",
+    "service": "Client Service",
+    "house": "The House",
+    "contact": "Contact",
+    "newsletter": "Join the House",
+    "newsletterBody": "Receive private previews of new collections and invitations to our events.",
+    "newsletterCta": "Subscribe",
+    "emailPlaceholder": "Your email",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "shipping": "Shipping & Returns",
+    "care": "Diamond Care"
+  },
+  "common": {
+    "loading": "Loading",
+    "learnMore": "Learn More",
+    "backToHome": "Back to Home"
+  }
+}

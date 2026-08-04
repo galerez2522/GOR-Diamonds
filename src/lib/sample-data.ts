@@ -1,0 +1,156 @@
+import type { ProductCardData } from '@/components/product/ProductCard';
+
+// Sample catalog for scaffolding. Once Prisma is seeded, replace with DB queries.
+export const sampleProducts: Record<string, ProductCardData[]> = {
+  'engagement-rings': [
+    {
+      slug: 'aurora-solitaire',
+      nameHe: 'סוליטר אורורה',
+      nameEn: 'Aurora Solitaire',
+      price: 12800,
+      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=80',
+      imageHover: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'celeste-halo',
+      nameHe: 'סלסטה הילה',
+      nameEn: 'Celeste Halo',
+      price: 15400,
+      image: 'https://images.unsplash.com/photo-1603561596112-db542b6a5b0f?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'noor-oval',
+      nameHe: 'נור אובל',
+      nameEn: 'Noor Oval',
+      price: 18900,
+      image: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'lumine-emerald',
+      nameHe: 'לומין אמרלד',
+      nameEn: 'Lumine Emerald',
+      price: 22400,
+      image: 'https://images.unsplash.com/photo-1584090093093-89b9c68b4b16?auto=format&fit=crop&w=1000&q=80',
+    },
+  ],
+  'wedding-rings': [
+    {
+      slug: 'eternal-band',
+      nameHe: 'טבעת נצח',
+      nameEn: 'Eternal Band',
+      price: 4200,
+      image: 'https://images.unsplash.com/photo-1522148085665-6ad07d0b8ef8?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'infini-pave',
+      nameHe: 'אינפיני פאווה',
+      nameEn: 'Infini Pavé',
+      price: 6900,
+      image: 'https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'platine-classic',
+      nameHe: 'פלטין קלאסי',
+      nameEn: 'Platine Classic',
+      price: 3400,
+      image: 'https://images.unsplash.com/photo-1614703428876-a1a1e56c1a0a?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'aurora-band',
+      nameHe: 'טבעת אורורה',
+      nameEn: 'Aurora Band',
+      price: 5100,
+      image: 'https://images.unsplash.com/photo-1608042314453-ae338d80c427?auto=format&fit=crop&w=1000&q=80',
+    },
+  ],
+  'necklaces': [
+    {
+      slug: 'stella-pendant',
+      nameHe: 'תליון סטלה',
+      nameEn: 'Stella Pendant',
+      price: 8400,
+      image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'lumière-riviera',
+      nameHe: 'לומייר ריביירה',
+      nameEn: 'Lumière Riviera',
+      price: 24800,
+      image: 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'aria-drop',
+      nameHe: 'טיפת אריה',
+      nameEn: 'Aria Drop',
+      price: 6200,
+      image: 'https://images.unsplash.com/photo-1636740287500-e5f97fbfe12c?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'solene-tennis',
+      nameHe: 'סולן טניס',
+      nameEn: 'Solene Tennis',
+      price: 18400,
+      image: 'https://images.unsplash.com/photo-1620035055666-c31c6a45ffc3?auto=format&fit=crop&w=1000&q=80',
+    },
+  ],
+  'earrings': [
+    {
+      slug: 'brillante-stud',
+      nameHe: 'ברילנטה צמוד',
+      nameEn: 'Brillante Stud',
+      price: 3800,
+      image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'aria-drop-earrings',
+      nameHe: 'עגילי אריה נטיפים',
+      nameEn: 'Aria Drop Earrings',
+      price: 5900,
+      image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'celeste-chandelier',
+      nameHe: 'נברשת סלסטה',
+      nameEn: 'Celeste Chandelier',
+      price: 9200,
+      image: 'https://images.unsplash.com/photo-1630019925419-c17b18a4d5f0?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'halo-hoops',
+      nameHe: 'חישוקי הילה',
+      nameEn: 'Halo Hoops',
+      price: 4400,
+      image: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1000&q=80',
+    },
+  ],
+  'bracelets': [
+    {
+      slug: 'infini-tennis',
+      nameHe: 'טניס אינפיני',
+      nameEn: 'Infini Tennis',
+      price: 16800,
+      image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'aurora-bangle',
+      nameHe: 'צמיד אורורה',
+      nameEn: 'Aurora Bangle',
+      price: 7400,
+      image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'lumine-line',
+      nameHe: 'קו לומין',
+      nameEn: 'Lumine Line',
+      price: 12200,
+      image: 'https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      slug: 'solene-cuff',
+      nameHe: 'צמיד סולן',
+      nameEn: 'Solene Cuff',
+      price: 9800,
+      image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1000&q=80',
+    },
+  ],
+};
