@@ -18,12 +18,15 @@ export function SignatureStory() {
           />
         </div>
         <div className="max-w-xl">
-          <div className="eyebrow mb-4">{t('eyebrow')}</div>
-          <h2 className="display-serif text-4xl md:text-5xl lg:text-6xl mb-8 text-balance">
+          <div className="eyebrow mb-5">{t('eyebrow')}</div>
+          <h2 className="display-serif text-3xl md:text-5xl leading-[1.15] mb-8 text-balance font-normal">
             {t('title')}
           </h2>
-          <p className="text-charcoal-700 leading-relaxed mb-10 text-[15px]">
-            {t('body')}
+          <p className="text-charcoal-700 leading-loose mb-5 text-[15px]">
+            {t('philosophy')}
+          </p>
+          <p className="text-charcoal-700 leading-loose mb-10 text-[15px]">
+            {t('vision')}
           </p>
           <Link href="/about" className="btn-outline">
             {t('cta')}

@@ -19,9 +19,9 @@
     "search": "Search"
   },
   "hero": {
-    "eyebrow": "The GOR Diamonds Collection",
-    "title": "The Language of Brilliance",
-    "subtitle": "Extraordinary diamonds. Uncompromising craftsmanship. Set to celebrate life’s most cherished moments.",
+    "eyebrow": "GØR DIAMONDS",
+    "title": "For the moments worth keeping",
+    "subtitle": "Some moments in life deserve to live in more than memory. A diamond chosen with intention keeps them forever.",
     "cta": "Explore the Collection",
     "ctaSecondary": "Book a Private Appointment"
   },
@@ -51,27 +51,34 @@
     }
   },
   "story": {
-    "eyebrow": "The House of GOR",
-    "title": "A Legacy Written in Light",
-    "body": "Every GOR Diamonds creation begins with the rarest of stones — hand-selected, hand-set, and finished in our atelier. For over a generation, our craftsmen have honored the tradition of the great diamond houses, translating each stone’s natural fire into pieces that will be treasured across generations.",
-    "cta": "Discover Our Story"
+    "eyebrow": "The House of GØR",
+    "title": "From this place, GØR Diamonds was born",
+    "opening": "Some moments in life were never meant to live only in memory.",
+    "poem": "A moment of love. A promise. A new beginning. An achievement long awaited. Or simply the moment you choose something that will remain with you long after the moment itself has passed.",
+    "philosophy": "For us, a diamond is far more than a precious stone. It is a symbol — carrying within it a story, a person, and a moment that cannot be replaced.",
+    "vision": "We set out to create a diamond house that bridges the classical world of diamonds with the way we believe luxury should feel today: precise, personal, transparent, and effortless.",
+    "selection": "Every diamond and every piece chosen at GØR is chosen with a thought for the person who will wear it and the story it will one day tell.",
+    "belief": "We believe true luxury does not live in carats, cuts or clarity alone. It lives in the knowing that you have chosen something that feels precisely, unmistakably yours.",
+    "signature": "For the moments worth keeping.",
+    "body": "For us, a diamond is far more than a precious stone — it is a symbol, a story, and a moment that cannot be replaced. Every diamond and every piece at GØR is chosen with a thought for the person who will wear it and the story it will one day tell.",
+    "cta": "Read the Full Story"
   },
   "craft": {
-    "eyebrow": "The Atelier",
-    "title": "Master Craftsmanship",
-    "body": "From the first rough diamond to the final polish, each piece is crafted by hand — a slow, exacting art that transforms the extraordinary into the eternal.",
+    "eyebrow": "Our Language",
+    "title": "Luxury that feels precisely yours",
+    "body": "True luxury does not live in carats, cuts or clarity alone. It lives in the knowing that you have chosen something that feels precisely, unmistakably yours.",
     "items": {
       "select": {
-        "title": "The Selection",
-        "body": "Only the top 1% of diamonds meet the GOR Diamonds standard."
+        "title": "Chosen with intention",
+        "body": "Every diamond is hand-selected for the person who will wear it."
       },
       "design": {
-        "title": "The Design",
-        "body": "Every setting is drawn by hand before it is ever cast in gold."
+        "title": "Personal",
+        "body": "Precise, transparent, effortless luxury — like the right moment."
       },
       "set": {
-        "title": "The Setting",
-        "body": "Our master jewellers hand-set every stone under magnification."
+        "title": "Hand-crafted",
+        "body": "A great house tradition, spoken in a modern language."
       }
     }
   },
