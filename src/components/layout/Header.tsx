@@ -36,32 +36,38 @@ export function Header() {
 
   const otherLocale = locale === 'he' ? 'en' : 'he';
 
+  // Header text color: white while transparent over the dark hero, charcoal once
+  // scrolled onto the ivory page background.
+  const fg = scrolled ? 'text-charcoal' : 'text-ivory';
+  const fgHover = 'hover:text-champagne-light';
+  const border = scrolled ? 'border-charcoal/10' : 'border-ivory/15';
+
   return (
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-luxe',
         scrolled
           ? 'bg-ivory/95 backdrop-blur-md shadow-[0_1px_0_rgba(0,0,0,0.06)]'
-          : 'bg-transparent',
+          : 'bg-gradient-to-b from-charcoal/40 via-charcoal/15 to-transparent',
       )}
     >
       <div className="container-luxe flex items-center justify-between py-5 md:py-6">
         {/* Left utilities */}
         <div className="flex items-center gap-4 flex-1">
           <button
-            className="lg:hidden text-charcoal"
+            className={cn('lg:hidden', fg)}
             aria-label="Menu"
             onClick={() => setMobileOpen(true)}
           >
             <Menu size={20} />
           </button>
-          <button aria-label={t('search')} className="hidden lg:block text-charcoal">
+          <button aria-label={t('search')} className={cn('hidden lg:block', fg, fgHover, 'transition-colors')}>
             <Search size={18} />
           </button>
           <Link
             href={pathname}
             locale={otherLocale}
-            className="hidden lg:inline-block text-[11px] tracking-luxe uppercase text-charcoal hover:text-champagne-dark transition-colors"
+            className={cn('hidden lg:inline-block text-[11px] tracking-luxe uppercase transition-colors', fg, fgHover)}
           >
             {otherLocale === 'he' ? 'עברית' : 'English'}
           </Link>
@@ -88,13 +94,13 @@ export function Header() {
 
         {/* Right utilities */}
         <div className="flex items-center justify-end gap-4 md:gap-5 flex-1">
-          <Link href="/account" aria-label={t('account')} className="text-charcoal hover:text-champagne-dark transition-colors">
+          <Link href="/account" aria-label={t('account')} className={cn('transition-colors', fg, fgHover)}>
             <User size={18} />
           </Link>
-          <Link href="/account/wishlist" aria-label={t('wishlist')} className="hidden md:inline-block text-charcoal hover:text-champagne-dark transition-colors">
+          <Link href="/account/wishlist" aria-label={t('wishlist')} className={cn('hidden md:inline-block transition-colors', fg, fgHover)}>
             <Heart size={18} />
           </Link>
-          <Link href="/cart" aria-label={t('cart')} className="relative text-charcoal hover:text-champagne-dark transition-colors">
+          <Link href="/cart" aria-label={t('cart')} className={cn('relative transition-colors', fg, fgHover)}>
             <ShoppingBag size={18} />
             {count > 0 && (
               <span className="absolute -top-2 -right-2 min-w-[16px] h-4 px-1 rounded-full bg-champagne text-ivory text-[10px] flex items-center justify-center">
@@ -106,14 +112,14 @@ export function Header() {
       </div>
 
       {/* Desktop nav */}
-      <nav className="hidden lg:block border-t border-charcoal/10">
+      <nav className={cn('hidden lg:block border-t transition-colors duration-500', border)}>
         <div className="container-luxe">
           <ul className="flex items-center justify-center gap-10 py-4">
             {nav.map(({ key, href }) => (
               <li key={key}>
                 <Link
                   href={href}
-                  className="text-[11px] tracking-luxe uppercase text-charcoal hover:text-champagne-dark transition-colors"
+                  className={cn('text-[11px] tracking-luxe uppercase transition-colors', fg, fgHover)}
                 >
                   {t(key)}
                 </Link>
