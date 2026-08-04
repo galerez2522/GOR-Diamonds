@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
+import Image from 'next/image';
 import { Link, usePathname } from '@/i18n/routing';
 import { ShoppingBag, User, Search, Menu, X, Heart } from 'lucide-react';
 import { useCartStore } from '@/lib/cart-store';
@@ -66,14 +67,31 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Wordmark */}
-        <Link href="/" className="flex-1 text-center group">
-          <div className="font-serif text-2xl md:text-3xl tracking-[0.32em] uppercase text-charcoal">
-            GOR
-          </div>
-          <div className="text-[9px] md:text-[10px] tracking-luxe uppercase text-champagne-dark mt-0.5">
-            {tBrand('name').replace('GOR ', '')}
-          </div>
+        {/* Wordmark — text version over the dark hero, logo image once scrolled */}
+        <Link
+          href="/"
+          className="flex-1 flex justify-center group"
+          aria-label={tBrand('name')}
+        >
+          {scrolled ? (
+            <Image
+              src="/brand/gor-diamonds-logo.png"
+              alt={tBrand('name')}
+              width={220}
+              height={140}
+              priority
+              className="h-12 md:h-14 w-auto object-contain transition-transform duration-700 ease-luxe group-hover:scale-[1.03]"
+            />
+          ) : (
+            <span className="flex flex-col items-center text-ivory">
+              <span className="font-serif text-2xl md:text-3xl tracking-[0.36em] leading-none">
+                G<span className="relative inline-block px-[1px]">Ø</span>R
+              </span>
+              <span className="mt-1 text-[9px] md:text-[10px] tracking-luxe uppercase text-champagne-light">
+                Diamonds
+              </span>
+            </span>
+          )}
         </Link>
 
         {/* Right utilities */}
@@ -121,7 +139,13 @@ export function Header() {
         )}
       >
         <div className="flex items-center justify-between p-6 border-b border-charcoal/10">
-          <span className="font-serif text-xl tracking-[0.32em] uppercase">GOR</span>
+          <Image
+            src="/brand/gor-diamonds-logo.png"
+            alt={tBrand('name')}
+            width={140}
+            height={90}
+            className="h-10 w-auto object-contain"
+          />
           <button onClick={() => setMobileOpen(false)} aria-label="Close">
             <X size={22} />
           </button>
