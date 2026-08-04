@@ -2,11 +2,18 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
-import { Cormorant_Garamond, Inter, Frank_Ruhl_Libre } from 'next/font/google';
+import { Cormorant_Garamond, Inter, Frank_Ruhl_Libre, Cinzel } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import '../globals.css';
+
+const display = Cinzel({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display',
+  display: 'swap',
+});
 
 const serif = Cormorant_Garamond({
   subsets: ['latin'],
@@ -58,7 +65,7 @@ export default async function LocaleLayout({
   const dir = locale === 'he' ? 'rtl' : 'ltr';
 
   return (
-    <html lang={locale} dir={dir} className={`${serif.variable} ${sans.variable} ${hebrew.variable}`}>
+    <html lang={locale} dir={dir} className={`${display.variable} ${serif.variable} ${sans.variable} ${hebrew.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <Header />

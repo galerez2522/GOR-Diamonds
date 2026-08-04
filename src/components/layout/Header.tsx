@@ -67,31 +67,23 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Wordmark — text version over the dark hero, logo image once scrolled */}
+        {/* Wordmark — same transparent logo on any background */}
         <Link
           href="/"
           className="flex-1 flex justify-center group"
           aria-label={tBrand('name')}
         >
-          {scrolled ? (
-            <Image
-              src="/brand/gor-diamonds-logo.png"
-              alt={tBrand('name')}
-              width={220}
-              height={140}
-              priority
-              className="h-12 md:h-14 w-auto object-contain transition-transform duration-700 ease-luxe group-hover:scale-[1.03]"
-            />
-          ) : (
-            <span className="flex flex-col items-center text-ivory">
-              <span className="font-serif text-2xl md:text-3xl tracking-[0.36em] leading-none">
-                G<span className="relative inline-block px-[1px]">Ø</span>R
-              </span>
-              <span className="mt-1 text-[9px] md:text-[10px] tracking-luxe uppercase text-champagne-light">
-                Diamonds
-              </span>
-            </span>
-          )}
+          <Image
+            src="/brand/gor-diamonds-logo-transparent.png"
+            alt={tBrand('name')}
+            width={789}
+            height={532}
+            priority
+            className={cn(
+              'w-auto object-contain transition-all duration-700 ease-luxe group-hover:scale-[1.02]',
+              scrolled ? 'h-11 md:h-12' : 'h-14 md:h-16 drop-shadow-[0_4px_18px_rgba(0,0,0,0.35)]',
+            )}
+          />
         </Link>
 
         {/* Right utilities */}
@@ -140,10 +132,10 @@ export function Header() {
       >
         <div className="flex items-center justify-between p-6 border-b border-charcoal/10">
           <Image
-            src="/brand/gor-diamonds-logo.png"
+            src="/brand/gor-diamonds-logo-transparent.png"
             alt={tBrand('name')}
-            width={140}
-            height={90}
+            width={789}
+            height={532}
             className="h-10 w-auto object-contain"
           />
           <button onClick={() => setMobileOpen(false)} aria-label="Close">

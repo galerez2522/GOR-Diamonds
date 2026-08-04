@@ -25,28 +25,34 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-end pb-20 md:pb-28 text-center text-ivory container-luxe">
         <div className="animate-fade-up" style={{ animationDelay: '0.1s' }}>
-          <div className="eyebrow !text-champagne-light mb-6">{t('eyebrow')}</div>
+          <div className="eyebrow !text-champagne-light mb-8 tracking-[0.32em]">
+            {t('eyebrow')}
+          </div>
         </div>
         <h1
-          className="display-serif text-[44px] md:text-7xl lg:text-8xl max-w-4xl text-balance animate-fade-up"
+          className="display-serif text-[40px] md:text-6xl lg:text-7xl max-w-4xl text-balance animate-fade-up font-light tracking-wide"
           style={{ animationDelay: '0.25s' }}
         >
           {t('title')}
         </h1>
+        <div
+          className="mt-6 h-px w-16 bg-champagne/70 animate-fade-up"
+          style={{ animationDelay: '0.35s' }}
+        />
         <p
-          className="mt-8 max-w-xl text-sm md:text-base text-ivory/85 leading-relaxed animate-fade-up"
-          style={{ animationDelay: '0.4s' }}
+          className="mt-8 max-w-xl text-sm md:text-base text-ivory/80 leading-relaxed animate-fade-up font-light"
+          style={{ animationDelay: '0.45s' }}
         >
           {t('subtitle')}
         </p>
         <div
-          className="mt-10 flex flex-col sm:flex-row items-center gap-4 animate-fade-up"
-          style={{ animationDelay: '0.55s' }}
+          className="mt-12 flex flex-col sm:flex-row items-center gap-4 animate-fade-up"
+          style={{ animationDelay: '0.6s' }}
         >
           <Link href="/collections/engagement-rings" className="btn bg-ivory text-charcoal hover:bg-champagne hover:text-charcoal">
             {t('cta')}
           </Link>
-          <Link href="/appointment" className="btn border border-ivory/70 text-ivory hover:bg-ivory hover:text-charcoal">
+          <Link href="/appointment" className="btn border border-ivory/60 text-ivory hover:bg-ivory hover:text-charcoal">
             {t('ctaSecondary')}
           </Link>
         </div>

@@ -5,6 +5,7 @@
 @layer base {
   :root {
     --font-sans: 'Inter', system-ui, sans-serif;
+    --font-display: 'Cinzel', 'Trajan Pro', Georgia, serif;
     --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
     --font-hebrew: 'Frank Ruhl Libre', 'Assistant', 'David', serif;
   }
@@ -19,12 +20,12 @@
   body {
     @apply bg-ivory text-charcoal font-sans;
     background-image:
-      radial-gradient(1200px 800px at 10% -10%, rgba(184, 149, 106, 0.06), transparent 60%),
-      radial-gradient(1000px 700px at 100% 20%, rgba(232, 240, 245, 0.5), transparent 60%);
+      radial-gradient(1200px 800px at 10% -10%, rgba(176, 138, 71, 0.05), transparent 60%),
+      radial-gradient(1000px 700px at 100% 20%, rgba(232, 240, 245, 0.35), transparent 60%);
   }
 
   h1, h2, h3, h4, h5 {
-    @apply font-serif;
+    @apply font-display;
     font-feature-settings: 'liga' 1, 'kern' 1;
   }
 
@@ -83,6 +84,10 @@
   }
 
   .display-serif {
+    @apply font-display font-normal leading-[1.05] tracking-wide;
+  }
+
+  .display-script {
     @apply font-serif font-light leading-[1.05];
   }
 }

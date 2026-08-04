@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { Instagram, Facebook, Mail } from 'lucide-react';
 
@@ -12,9 +13,15 @@ export function Footer() {
       {/* Newsletter */}
       <div className="border-b border-ivory/10">
         <div className="container-luxe py-16 md:py-20 text-center max-w-3xl mx-auto">
+          <Image
+            src="/brand/gor-diamonds-logo-transparent.png"
+            alt={tBrand('name')}
+            width={789}
+            height={532}
+            className="mx-auto h-16 md:h-20 w-auto object-contain mb-8"
+          />
           <div className="eyebrow !text-champagne mb-4">{t('newsletter')}</div>
-          <h3 className="display-serif text-3xl md:text-4xl mb-4">{tBrand('name')}</h3>
-          <p className="text-ivory/70 text-sm md:text-base mb-8 leading-relaxed">
+          <p className="text-ivory/70 text-sm md:text-base mb-8 leading-relaxed max-w-xl mx-auto">
             {t('newsletterBody')}
           </p>
           <form className="flex flex-col sm:flex-row items-stretch gap-3 max-w-lg mx-auto">

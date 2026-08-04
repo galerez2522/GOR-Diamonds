@@ -6,25 +6,26 @@ const config: Config = {
     extend: {
       colors: {
         ivory: {
-          DEFAULT: '#FAF7F2',
-          50: '#FDFBF8',
-          100: '#FAF7F2',
-          200: '#F2ECE0',
+          DEFAULT: '#F7F2E8',
+          50: '#FBF8F1',
+          100: '#F7F2E8',
+          200: '#EFE7D3',
         },
         charcoal: {
-          DEFAULT: '#1A1A1A',
-          800: '#242424',
-          700: '#3A3A3A',
-          500: '#6B6B6B',
+          DEFAULT: '#1A1613',
+          800: '#231E19',
+          700: '#3A322A',
+          500: '#6E6259',
         },
         champagne: {
-          DEFAULT: '#B8956A',
-          light: '#D4B896',
-          dark: '#8F6F4A',
+          DEFAULT: '#B08A47',
+          light: '#D4B27A',
+          dark: '#8E6C33',
         },
         diamond: '#E8F0F5',
       },
       fontFamily: {
+        display: ['var(--font-display)', 'Cinzel', 'Trajan Pro', 'Georgia', 'serif'],
         serif: ['var(--font-serif)', 'Cormorant Garamond', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
         hebrew: ['var(--font-hebrew)', 'Frank Ruhl Libre', 'serif'],
